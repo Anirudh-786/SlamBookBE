@@ -14,7 +14,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/slam")
-@CrossOrigin(origins = "http://localhost:8081")
+@CrossOrigin(origins = {"http://localhost:5173", "http://localhost:8081"})
 public class SlamBookController {
 
     private final SlamBookService slamBookService;
