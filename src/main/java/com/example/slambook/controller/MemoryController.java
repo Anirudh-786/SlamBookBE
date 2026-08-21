@@ -17,7 +17,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = {"http://localhost:5173", "http://localhost:8081"})
+@CrossOrigin(origins = {"http://localhost:5173", "http://localhost:8081", "https://slam-book-fe-ten.vercel.app"})
 public class MemoryController {
 
     private final MemoryService memoryService;

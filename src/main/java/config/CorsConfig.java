@@ -14,7 +14,7 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**") // Applies CORS configuration to all paths
-                        .allowedOrigins("http://localhost:8081") // Allows your React development port
+                        .allowedOrigins("https://slam-book-fe-ten.vercel.app") // Allows your React development port
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Accepts preflight requests
                         .allowedHeaders("*") // Allows all header fields sent by client
                         .allowCredentials(true);
