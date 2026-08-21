@@ -28,6 +28,9 @@ public class SlamBookResponse {
     private Boolean bestFriend;
 
     private LocalDate friendshipSince;
+    private String profilePhotoUrl;
+    private String capsulePhotoUrl;
+    private String capsuleText;
 
     public SlamBookResponse() {
     }
@@ -42,7 +45,10 @@ public class SlamBookResponse {
             String aboutMe,
             Integer friendshipRating,
             Boolean bestFriend,
-            LocalDate friendshipSince) {
+            LocalDate friendshipSince,
+            String profilePhotoUrl,
+            String capsulePhotoUrl,
+            String capsuleText) {
 
         this.id = id;
         this.fullName = fullName;
@@ -54,6 +60,9 @@ public class SlamBookResponse {
         this.friendshipRating = friendshipRating;
         this.bestFriend = bestFriend;
         this.friendshipSince = friendshipSince;
+        this.profilePhotoUrl = profilePhotoUrl;
+        this.capsulePhotoUrl = capsulePhotoUrl;
+        this.capsuleText = capsuleText;
     }
 
     public UUID getId() {
@@ -134,5 +143,29 @@ public class SlamBookResponse {
 
     public void setFriendshipSince(LocalDate friendshipSince) {
         this.friendshipSince = friendshipSince;
+    }
+
+    public String getProfilePhotoUrl() {
+        return profilePhotoUrl;
+    }
+
+    public void setProfilePhotoUrl(String profilePhotoUrl) {
+        this.profilePhotoUrl = profilePhotoUrl;
+    }
+
+    public String getCapsulePhotoUrl() {
+        return capsulePhotoUrl;
+    }
+
+    public void setCapsulePhotoUrl(String capsulePhotoUrl) {
+        this.capsulePhotoUrl = capsulePhotoUrl;
+    }
+
+    public String getCapsuleText() {
+        return capsuleText;
+    }
+
+    public void setCapsuleText(String capsuleText) {
+        this.capsuleText = capsuleText;
     }
 }

@@ -10,6 +10,8 @@ import com.example.slambook.service.SlamBookService;
 import org.springframework.transaction.annotation.Transactional; // Preferred over jakarta.transaction for Spring
 import org.springframework.stereotype.Service;
 import java.util.UUID;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional
@@ -33,6 +35,9 @@ public class SlamBookServiceImpl implements SlamBookService {
                 .friendshipRating(request.getFriendshipRating())
                 .bestFriend(request.getBestFriend())
                 .friendshipSince(request.getFriendshipSince())
+                .profilePhotoUrl(request.getProfilePhotoUrl())
+                .capsulePhotoUrl(request.getCapsulePhotoUrl())
+                .capsuleText(request.getCapsuleText())
                 // .id(UUID.randomUUID()) // Uncomment this if you manually generate IDs instead of DB auto-generation
                 .build();
 
@@ -49,6 +54,15 @@ public class SlamBookServiceImpl implements SlamBookService {
                         "SLAM Book not found with id: " + id
                 ));
         return mapToResponse(slamBook);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<SlamBookResponse> getAll() {
+        return slamBookRepository.findAll()
+                .stream()
+                .map(this::mapToResponse)
+                .collect(Collectors.toList());
     }
 
 
@@ -82,6 +96,10 @@ public class SlamBookServiceImpl implements SlamBookService {
         slamBook.setFriendshipSince(
                 request.getFriendshipSince()
         );
+        // New fields
+        if (request.getProfilePhotoUrl() != null) slamBook.setProfilePhotoUrl(request.getProfilePhotoUrl());
+        if (request.getCapsulePhotoUrl() != null) slamBook.setCapsulePhotoUrl(request.getCapsulePhotoUrl());
+        if (request.getCapsuleText() != null) slamBook.setCapsuleText(request.getCapsuleText());
 
         SlamBook updated =
                 slamBookRepository.save(slamBook);
@@ -118,6 +136,10 @@ public class SlamBookServiceImpl implements SlamBookService {
                 slamBook.getFriendshipRating(),
                 slamBook.getBestFriend(),
                 slamBook.getFriendshipSince()
+                                ,
+                                slamBook.getProfilePhotoUrl(),
+                                slamBook.getCapsulePhotoUrl(),
+                                slamBook.getCapsuleText()
         );
     }
 }

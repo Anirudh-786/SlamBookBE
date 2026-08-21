@@ -37,6 +37,9 @@ public class UpdateSlamBookRequest {
     private Boolean bestFriend;
 
     private LocalDate friendshipSince;
+    private String profilePhotoUrl;
+    private String capsulePhotoUrl;
+    private String capsuleText;
 
     // No-argument constructor
     public UpdateSlamBookRequest() {
@@ -112,5 +115,29 @@ public class UpdateSlamBookRequest {
 
     public void setFriendshipSince(LocalDate friendshipSince) {
         this.friendshipSince = friendshipSince;
+    }
+
+    public String getProfilePhotoUrl() {
+        return profilePhotoUrl;
+    }
+
+    public void setProfilePhotoUrl(String profilePhotoUrl) {
+        this.profilePhotoUrl = profilePhotoUrl;
+    }
+
+    public String getCapsulePhotoUrl() {
+        return capsulePhotoUrl;
+    }
+
+    public void setCapsulePhotoUrl(String capsulePhotoUrl) {
+        this.capsulePhotoUrl = capsulePhotoUrl;
+    }
+
+    public String getCapsuleText() {
+        return capsuleText;
+    }
+
+    public void setCapsuleText(String capsuleText) {
+        this.capsuleText = capsuleText;
     }
 }

@@ -18,6 +18,8 @@ public interface SlamBookService {
             UUID uuid
     );
 
+    java.util.List<SlamBookResponse> getAll();
+
     SlamBookResponse update(
             UUID id,
             UpdateSlamBookRequest request

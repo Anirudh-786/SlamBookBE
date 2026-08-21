@@ -38,6 +38,13 @@ public class SlamBookController {
                 .body(response);
     }
 
+    @GetMapping
+    public ResponseEntity<java.util.List<SlamBookResponse>> getAll() {
+        return ResponseEntity.ok(
+                slamBookService.getAll()
+        );
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<SlamBookResponse> getById(
             @PathVariable UUID id) {

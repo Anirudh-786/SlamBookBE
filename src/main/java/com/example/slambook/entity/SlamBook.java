@@ -38,4 +38,11 @@ public class SlamBook {
     private Boolean bestFriend;
 
     private LocalDate friendshipSince;
+
+    private String profilePhotoUrl;
+
+    private String capsulePhotoUrl;
+
+    @Column(length = 2000)
+    private String capsuleText;
 }
