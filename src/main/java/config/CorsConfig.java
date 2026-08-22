@@ -10,14 +10,27 @@ public class CorsConfig {
 
     @Bean
     public WebMvcConfigurer corsConfigurer() {
+
         return new WebMvcConfigurer() {
+
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**") // Applies CORS configuration to all paths
-                        .allowedOrigins("https://slam-book-fe-ten.vercel.app") // Allows your React development port
-                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Accepts preflight requests
-                        .allowedHeaders("*") // Allows all header fields sent by client
-                        .allowCredentials(true);
+
+                registry.addMapping("/**")
+                        .allowedOrigins(
+                                "http://localhost:5173",
+                                "http://localhost:8081",
+                                "https://slam-book-fe-ten.vercel.app"
+                        )
+                        .allowedMethods(
+                                "GET",
+                                "POST",
+                                "PUT",
+                                "DELETE",
+                                "OPTIONS"
+                        )
+                        .allowedHeaders("*")
+                        .allowCredentials(false);
             }
         };
     }
