@@ -53,4 +53,15 @@ public class GlobalExceptionHandler {
                 .badRequest()
                 .body(response);
     }
-}
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<?> handleGeneral(Exception exception) {
+        Map<String, Object> response = new HashMap<>();
+        response.put("success", false);
+        response.put("message", exception.getMessage() != null ? exception.getMessage() : "An unexpected server error occurred");
+
+        return ResponseEntity
+                .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(response);
+    }
+}
