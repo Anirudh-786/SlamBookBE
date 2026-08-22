@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -45,4 +47,12 @@ public class SlamBook {
 
     @Column(length = 2000)
     private String capsuleText;
+
+    @OneToMany(
+            mappedBy = "slamBook",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    @Builder.Default
+    private List<Friend> friends = new ArrayList<>();
 }
