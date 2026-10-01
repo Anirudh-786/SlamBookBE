@@ -4,9 +4,11 @@ import com.example.slambook.dto.request.CreateSlamBookRequest;
 import com.example.slambook.dto.request.UpdateSlamBookRequest;
 import com.example.slambook.dto.response.SlamBookResponse;
 import com.example.slambook.entity.SlamBook;
+import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
+@Service
 public interface SlamBookService {
 
     SlamBookResponse create(

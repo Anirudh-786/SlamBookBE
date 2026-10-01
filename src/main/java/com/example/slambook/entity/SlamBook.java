@@ -19,6 +19,7 @@ public class SlamBook {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
+
     private UUID id;
 
     @Column(nullable = false)
@@ -55,4 +56,5 @@ public class SlamBook {
     )
     @Builder.Default
     private List<Friend> friends = new ArrayList<>();
+
 }

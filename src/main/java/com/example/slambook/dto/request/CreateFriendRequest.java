@@ -2,7 +2,16 @@ package com.example.slambook.dto.request;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class CreateFriendRequest {
 
     @NotBlank(message = "Friend name is required")
@@ -26,54 +35,54 @@ public class CreateFriendRequest {
 
     private String favoriteThing;
 
-    public CreateFriendRequest() {
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getNickname() {
-        return nickname;
-    }
-
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public String getMemory() {
-        return memory;
-    }
-
-    public void setMemory(String memory) {
-        this.memory = memory;
-    }
-
-    public String getSongDedication() {
-        return songDedication;
-    }
-
-    public void setSongDedication(String songDedication) {
-        this.songDedication = songDedication;
-    }
-
-    public String getFavoriteThing() {
-        return favoriteThing;
-    }
-
-    public void setFavoriteThing(String favoriteThing) {
-        this.favoriteThing = favoriteThing;
-    }
+//    public CreateFriendRequest() {
+//    }
+//
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+//
+//    public String getNickname() {
+//        return nickname;
+//    }
+//
+//    public void setNickname(String nickname) {
+//        this.nickname = nickname;
+//    }
+//
+//    public String getMessage() {
+//        return message;
+//    }
+//
+//    public void setMessage(String message) {
+//        this.message = message;
+//    }
+//
+//    public String getMemory() {
+//        return memory;
+//    }
+//
+//    public void setMemory(String memory) {
+//        this.memory = memory;
+//    }
+//
+//    public String getSongDedication() {
+//        return songDedication;
+//    }
+//
+//    public void setSongDedication(String songDedication) {
+//        this.songDedication = songDedication;
+//    }
+//
+//    public String getFavoriteThing() {
+//        return favoriteThing;
+//    }
+//
+//    public void setFavoriteThing(String favoriteThing) {
+//        this.favoriteThing = favoriteThing;
+//    }
 }
